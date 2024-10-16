@@ -10,6 +10,8 @@
 
 ### 💡 Others
 
+- Update `@urql/core` and related dependencies and remove `graphql` dependency.
+
 ## 0.19.0 — 2024-10-22
 
 ### 🛠 Breaking changes
