@@ -3,7 +3,7 @@ import React from 'react';
 import { LocalRouteParamsContext } from './Route';
 import { store, useStoreRootState, useStoreRouteInfo } from './global-state/router-store';
 import { Router } from './imperative-api';
-import { RouteParams, RouteSegments, Route, UnknownOutputParams, InternalRoute } from './types';
+import { RouteParams, RouteSegments, UnknownOutputParams, InternalRoute } from './types';
 
 export function useRootNavigationState() {
   return useStoreRootState();
