@@ -4,6 +4,8 @@
 
 ### 🛠 Breaking changes
 
+- Remove generic from `Href` type, navigation hooks and functions ([#31764](https://github.com/expo/expo/pull/31764) by [@marklawlor](https://github.com/marklawlor))
+
 ### 🎉 New features
 
 ### 🐛 Bug fixes
@@ -22,7 +24,6 @@
 
 - Bumped iOS deployment target to 15.1. ([#30840](https://github.com/expo/expo/pull/30840) by [@tsapeta](https://github.com/tsapeta))
 - Update to React Navigation v7 ([#28109](https://github.com/expo/expo/pull/28109) by [@marklawlor](https://github.com/marklawlor))
-- Remove generic from `Href` type and navigation hooks and functions ([#31764](https://github.com/expo/expo/pull/31764) by [@marklawlor](https://github.com/marklawlor))
 
 ### 🎉 New features
 
