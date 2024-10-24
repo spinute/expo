@@ -15,7 +15,7 @@ export declare function useLinking(ref: React.RefObject<NavigationContainerRef<P
         routes: import("@react-navigation/core").NavigationRoute<ParamListBase, string>[];
         type: string;
         stale: false;
-    }>, "stale" | "routes">> & Readonly<{
+    }>, "routes" | "stale">> & Readonly<{
         stale?: true | undefined;
         routes: import("@react-navigation/core").PartialRoute<import("@react-navigation/core").Route<string, object | undefined>>[];
     }> & {
@@ -27,7 +27,7 @@ export declare function useLinking(ref: React.RefObject<NavigationContainerRef<P
             routes: import("@react-navigation/core").NavigationRoute<ParamListBase, string>[];
             type: string;
             stale: false;
-        }>, "stale" | "routes">> & Readonly<{
+        }>, "routes" | "stale">> & Readonly<{
             stale?: true | undefined;
             routes: import("@react-navigation/core").PartialRoute<import("@react-navigation/core").Route<string, object | undefined>>[];
         }> & any) | undefined;
