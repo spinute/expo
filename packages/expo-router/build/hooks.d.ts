@@ -3,10 +3,34 @@ import { RouteParams, RouteSegments, Routes, UnknownOutputParams } from './types
 type SearchParams = Record<string, string | string[]>;
 export declare function useRootNavigationState(): any;
 export declare function useRouteInfo(): import("./LocationProvider").UrlObject;
-/** @deprecated Use [`useNavigationContainerRef`](#usenavigationcontainerref) instead, which returns a React `ref`. */
+/**
+ * @deprecated Use [`useNavigationContainerRef`](#usenavigationcontainerref) instead,
+ * which returns a React `ref`.
+ */
 export declare function useRootNavigation(): import("@react-navigation/core").NavigationContainerRef<ReactNavigation.RootParamList> | null;
-/** @return The root `<NavigationContainer />` ref for the app. The `ref.current` may be `null` if the `<NavigationContainer />` hasn't mounted yet. */
+/**
+ * @return The root `<NavigationContainer />` ref for the app. The `ref.current` may be `null`
+ * if the `<NavigationContainer />` hasn't mounted yet.
+ */
 export declare function useNavigationContainerRef(): import("@react-navigation/core").NavigationContainerRefWithCurrent<ReactNavigation.RootParamList>;
+/**
+ *
+ * Returns the [Router](#router) object for imperative navigation.
+ *
+ * @example
+ *```tsx
+ * import { useRouter } from 'expo-router';
+ * import { Text } from 'react-native';
+ *
+ * export default function Route() {
+ *  const router = useRouter();
+ *
+ *  return (
+ *   <Text onPress={() => router.push('/home')}>Go Home</Text>
+ *  );
+ *}
+ * ```
+ */
 export declare function useRouter(): Router;
 /**
  * @private

@@ -14,15 +14,40 @@ export function useRouteInfo() {
   return useStoreRouteInfo();
 }
 
-/** @deprecated Use [`useNavigationContainerRef`](#usenavigationcontainerref) instead, which returns a React `ref`. */
+/**
+ * @deprecated Use [`useNavigationContainerRef`](#usenavigationcontainerref) instead,
+ * which returns a React `ref`.
+ */
 export function useRootNavigation() {
   return store.navigationRef.current;
 }
 
-/** @return The root `<NavigationContainer />` ref for the app. The `ref.current` may be `null` if the `<NavigationContainer />` hasn't mounted yet. */
+/**
+ * @return The root `<NavigationContainer />` ref for the app. The `ref.current` may be `null`
+ * if the `<NavigationContainer />` hasn't mounted yet.
+ */
 export function useNavigationContainerRef() {
   return store.navigationRef;
 }
+
+/**
+ *
+ * Returns the [Router](#router) object for imperative navigation.
+ *
+ * @example
+ *```tsx
+ * import { useRouter } from 'expo-router';
+ * import { Text } from 'react-native';
+ *
+ * export default function Route() {
+ *  const router = useRouter();
+ *
+ *  return (
+ *   <Text onPress={() => router.push('/home')}>Go Home</Text>
+ *  );
+ *}
+ * ```
+ */
 
 export function useRouter(): Router {
   return React.useMemo(

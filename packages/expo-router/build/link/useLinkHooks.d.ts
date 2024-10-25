@@ -120,6 +120,20 @@ export interface LinkProps<T extends string | object> extends Omit<TextProps, 'h
     /**
      * Remove the current route from the history and replace
      * it with the specified URL. This is useful for [redirects](/router/reference/redirects/).
+     *
+     * @example
+     *```tsx
+     * import { Link } from 'expo-router';
+     * import { View } from 'react-native';
+     *
+     * export default function Route() {
+     *  return (
+     *   <View>
+     *     <Link replace href="/feed">Login</Link>
+     *   </View>
+     *  );
+     *}
+     * ```
      */
     replace?: boolean;
     /**
@@ -150,10 +164,12 @@ export interface LinkProps<T extends string | object> extends Omit<TextProps, 'h
     /**
      * Relative URL references are either relative to the directory or the document. By default, relative paths are relative to the document.
      *
-     * @see [Resolving relative references in Mozilla's documentation](https://developer.mozilla.org/en-US/docs/Web/API/URL_API/Resolving_relative_references)
+     * @see [Resolving relative references in Mozilla's documentation](https://developer.mozilla.org/en-US/docs/Web/API/URL_API/Resolving_relative_references).
      */
     relativeToDirectory?: boolean;
-    /** Should this route replace the initial screen */
+    /**
+     * Replaces the initial screen with the current route.
+     */
     withAnchor?: boolean;
 }
 export declare function useInteropClassName(props: {
