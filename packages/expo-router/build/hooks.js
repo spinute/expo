@@ -7,6 +7,21 @@ exports.useSearchParams = exports.useLocalSearchParams = exports.useGlobalSearch
 const react_1 = __importDefault(require("react"));
 const Route_1 = require("./Route");
 const router_store_1 = require("./global-state/router-store");
+/**
+ * Returns the [navigation state](https://reactnavigation.org/docs/navigation-state/)
+ * of the navigator which contains the current screen.
+ *
+ * @example
+ * ```tsx
+ * import { useRootNavigationState } from 'expo-router';
+ *
+ * export default function Route() {
+ *  const { routes } = useRootNavigationState();
+ *
+ *  return <Text>{routes[0].name}</Text>;
+ * }
+ * ```
+ */
 function useRootNavigationState() {
     return (0, router_store_1.useStoreRootState)();
 }

@@ -24,8 +24,9 @@ import { NavigationProp } from '@react-navigation/native';
  * }
  * ```
  *
- * When using nested layouts, you can access higher-order layouts by passing a secondary argument denoting the layout route.
- * For example, `/menu/_layout.tsx` is nested inside `/app/orders/`, you can use `useNavigation('/orders/menu/')`.
+ * When using nested layouts, you can access higher-order layouts by passing a secondary
+ * argument to denote the layout route. For example, when `/menu/_layout.tsx` is nested
+ * inside `/app/orders/`, you can use `useNavigation('/orders/menu/')`.
  *
  * @example
  * ```tsx app/orders/menu/index.tsx

@@ -14,7 +14,29 @@ const useLinkToPathProps_1 = __importDefault(require("./useLinkToPathProps"));
 const hooks_1 = require("../hooks");
 const useFocusEffect_1 = require("../useFocusEffect");
 const useLinkHooks_1 = require("./useLinkHooks");
-/** Redirects to the href as soon as the component is mounted. */
+/**
+ * Redirects to the `href` as soon as the component is mounted.
+ *
+ * @example
+ * ```tsx
+ * import { View, Text } from 'react-native';
+ * import { Redirect } from 'expo-router';
+ *
+ * export default function Page() {
+ *  const { user } = useAuth();
+ *
+ *  if (!user) {
+ *    return <Redirect href="/login" />;
+ *  }
+ *
+ *  return (
+ *    <View>
+ *      <Text>Welcome Back!</Text>
+ *    </View>
+ *  );
+ * }
+ * ```
+ */
 function Redirect({ href }) {
     const router = (0, hooks_1.useRouter)();
     (0, useFocusEffect_1.useFocusEffect)(() => {
@@ -29,19 +51,16 @@ function Redirect({ href }) {
 }
 exports.Redirect = Redirect;
 /**
- * Component to render link to another route using a path passed via [`href`](#href).
+ * Component that renders a link using [`href`](#href) to another route.
  * By default, it accepts children and wraps them in a `<Text>` component.
  *
  * Uses an anchor tag (`<a>`) on web and performs a client-side navigation to preserve
- * the state of the website and navigate faster. The web-only attributes     ch as `target`,
+ * the state of the website and navigate faster. The web-only attributes such as `target`,
  * `rel`, and `download` are supported and passed to the anchor tag on web. See
  * [`WebAnchorProps`](#webanchorprops) for more details.
  *
  * > **Note**: Client-side navigation works with both single-page apps,
  * and [static-rendering](/router/reference/static-rendering/).
- *
- * > An alternative to using the `Link` component, you can also use imperative
- * navigation with [`router`](#router).
  *
  * @example
  * ```tsx

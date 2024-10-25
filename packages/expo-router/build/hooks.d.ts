@@ -1,6 +1,21 @@
 import { Router } from './imperative-api';
 import { RouteParams, RouteSegments, Routes, UnknownOutputParams } from './types';
 type SearchParams = Record<string, string | string[]>;
+/**
+ * Returns the [navigation state](https://reactnavigation.org/docs/navigation-state/)
+ * of the navigator which contains the current screen.
+ *
+ * @example
+ * ```tsx
+ * import { useRootNavigationState } from 'expo-router';
+ *
+ * export default function Route() {
+ *  const { routes } = useRootNavigationState();
+ *
+ *  return <Text>{routes[0].name}</Text>;
+ * }
+ * ```
+ */
 export declare function useRootNavigationState(): any;
 export declare function useRouteInfo(): import("./LocationProvider").UrlObject;
 /**
@@ -97,16 +112,16 @@ export declare function usePathname(): string;
  */
 export declare function useGlobalSearchParams<TParams extends SearchParams = UnknownOutputParams>(): RouteParams<TParams>;
 /**
- * Returns URL parameters for globally selected route, including dynamic path segments.
- * This function updates even when the route is not focused. Useful for analytics or other background
- * operations that don't draw to the screen.
+ * Returns the URL parameters for globally selected route, including dynamic path segments.
+ * This hook updates even when the route is not focused. Useful for analytics or other
+ * background operations that don't draw to the screen.
  *
  * Route URL example: `acme://profile/baconbrix?extra=info`.
  *
  * When querying search params in a stack, opt-towards using
  * [`useLocalSearchParams`](#uselocalsearchparams) because it will only update when the route is focused.
  *
- * > **Note:** For usage information, see
+ * > **Note**: For usage information, see
  * [Local versus global search parameters](/router/reference/url-parameters/#local-versus-global-url-parameters).
  *
  * @example
@@ -128,8 +143,9 @@ export declare function useGlobalSearchParams<TRoute extends Routes, TParams ext
  */
 export declare function useLocalSearchParams<TParams extends SearchParams = UnknownOutputParams>(): RouteParams<TParams>;
 /**
- * Returns the URL parameters for the contextually focused route. Useful for stacks where you may push a new screen
- * that changes the query parameters.  For dynamic routes, both the route parameters and the search parameters are returned.
+ * Returns the URL parameters for the contextually focused route. Useful for stacks where
+ * you may push a new screen that changes the query parameters. For dynamic routes, both
+ * the route parameters and the search parameters are returned.
  *
  * Route URL example: `acme://profile/baconbrix?extra=info`.
  *
